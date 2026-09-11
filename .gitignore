@@ -1,0 +1,18 @@
+# --- Zdrojové podklady, které na web ani na GitHub nepatří -----------------
+# Logomanuál, logo v křivkách (AI/PDF) a další podklady značky — 36 MB
+# binárek a duševní vlastnictví značky. Drž je v zálohách, ne v gitu.
+X/
+
+# Originální fotografie z akcí — 9 MB, fotky skutečných klientů ze svateb
+# a pohřbů. Na web jdou jen zmenšené verze v assets/img/.
+fotky/
+
+# --- Systémové smetí -------------------------------------------------------
+Thumbs.db
+desktop.ini
+.DS_Store
+*.tmp
+
+# --- Poznámky ---
+# assets/img/ se do gitu záměrně přidává — jsou to soubory, které web
+# skutečně servíruje. Bez nich by repozitář nešel nasadit.
