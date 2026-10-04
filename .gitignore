@@ -1,18 +1,30 @@
-# --- Zdrojové podklady, které na web ani na GitHub nepatří -----------------
-# Logomanuál, logo v křivkách (AI/PDF) a další podklady značky — 36 MB
-# binárek a duševní vlastnictví značky. Drž je v zálohách, ne v gitu.
-X/
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# Originální fotografie z akcí — 9 MB, fotky skutečných klientů ze svateb
-# a pohřbů. Na web jdou jen zmenšené verze v assets/img/.
-fotky/
+# dependencies
+/node_modules
 
-# --- Systémové smetí -------------------------------------------------------
-Thumbs.db
-desktop.ini
-.DS_Store
-*.tmp
+# next.js
+/.next/
+/out/
 
-# --- Poznámky ---
-# assets/img/ se do gitu záměrně přidává — jsou to soubory, které web
-# skutečně servíruje. Bez nich by repozitář nešel nasadit.
+# production
+/build
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+# zdrojové podklady (loga, logomanuál, písma, originály fotek) — jen lokálně, repozitář je veřejný
+/X/
+/fotky/
