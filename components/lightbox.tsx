@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef } from "react"
 import { AnimatePresence, motion } from "framer-motion"
 import { ChevronLeft, ChevronRight, X } from "lucide-react"
 import type { Photo } from "@/lib/content"
+import { cz } from "@/lib/typo"
 
 type Props = {
   items: Photo[]
@@ -120,7 +121,7 @@ export function Lightbox({ items, index, onChange }: Props) {
               />
             </AnimatePresence>
             <figcaption className="mt-4 flex max-w-[92vw] items-baseline gap-4 text-sm text-white/85">
-              <span>{photo.alt}</span>
+              <span>{cz(photo.alt)}</span>
               <span className="shrink-0 tabular-nums text-blush">
                 {index! + 1} / {items.length}
               </span>

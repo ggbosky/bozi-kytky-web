@@ -3,6 +3,7 @@
 import { useState, type FormEvent } from "react"
 import { motion } from "framer-motion"
 import { contact } from "@/lib/content"
+import { cz } from "@/lib/typo"
 import { PillButton, ButtonInner, buttonClass } from "./pill-button"
 
 // Formulář umí dva režimy: bez ENDPOINT otevře předvyplněný e-mail,
@@ -102,7 +103,7 @@ function InquiryForm() {
           <select id="f-budget" name="rozpocet" className={field}>
             <option>Zatím nevím</option>
             <option>do 5 000 Kč</option>
-            <option>5 000 – 15 000 Kč</option>
+            <option>5 000–15 000 Kč</option>
             <option>nad 15 000 Kč</option>
           </select>
         </div>
@@ -155,8 +156,9 @@ export function InquirySection() {
             Napište mi, co chystáte.
           </h2>
           <p className="mx-auto mb-10 max-w-2xl leading-relaxed text-muted-foreground">
-            Stačí pár řádků. Čím víc mi napíšete o tom, co chystáte a pro koho to je, tím líp — ozvu se vám zpátky
-            s&nbsp;návrhem i cenou. Poptávka vás k&nbsp;ničemu nezavazuje.
+            {cz(
+              "Stačí pár řádků. Čím víc mi napíšete o tom, co chystáte a pro koho to je, tím líp — ozvu se vám zpátky s návrhem i cenou. Poptávka vás k ničemu nezavazuje.",
+            )}
           </p>
 
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">

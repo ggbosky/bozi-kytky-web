@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react"
 import { useReducedMotion } from "framer-motion"
 import { galleryRows, type Photo } from "@/lib/content"
+import { cz } from "@/lib/typo"
 import { Lightbox } from "./lightbox"
 
 const allPhotos = galleryRows.flat()
@@ -102,7 +103,7 @@ function MarqueeRow({
                 {p.tag}
               </span>
               <span className="absolute bottom-4 left-4 right-4 translate-y-2 text-left text-sm leading-snug text-white opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-                {p.alt}
+                {cz(p.alt)}
               </span>
             </button>
           )

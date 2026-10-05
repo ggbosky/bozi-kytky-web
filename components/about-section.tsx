@@ -3,6 +3,7 @@
 import { Check } from "lucide-react"
 import { motion } from "framer-motion"
 import { photos, reasons } from "@/lib/content"
+import { cz } from "@/lib/typo"
 
 // Jen fotka, bez rámečků a „živých“ štítků — ty působily jako šablona z AI.
 function Portrait() {
@@ -66,11 +67,12 @@ export function AboutSection() {
                 Martina Drexlerová
               </h2>
               <p className="mb-4 text-lg leading-relaxed text-green-ink">
-                Jmenuju se Martina a vážu květiny pro svatby, oslavy i poslední rozloučení.
+                {cz("Jmenuju se Martina a vážu květiny pro svatby, oslavy i poslední rozloučení.")}
               </p>
               <p className="leading-relaxed text-muted-foreground">
-                Mám ráda, když přijdete s&nbsp;něčím, co jsem ještě nedělala. Výzvy mě baví a vždycky se pokusím o co
-                nejlepší výsledek.
+                {cz(
+                  "Mám ráda, když přijdete s něčím, co jsem ještě nedělala. Výzvy mě baví a vždycky se pokusím o co nejlepší výsledek.",
+                )}
               </p>
               <p className="mt-6 text-lg font-semibold text-rose">— vždycky věřím, že se domluvíme.</p>
             </motion.div>
@@ -89,8 +91,8 @@ export function AboutSection() {
                     <Check className="h-3.5 w-3.5 text-blush" strokeWidth={2.5} />
                   </span>
                   <span className="text-sm leading-relaxed text-muted-foreground">
-                    <strong className="block font-semibold text-green-ink">{r.title}</strong>
-                    {r.text}
+                    <strong className="block font-semibold text-green-ink">{cz(r.title)}</strong>
+                    {cz(r.text)}
                   </span>
                 </motion.li>
               ))}

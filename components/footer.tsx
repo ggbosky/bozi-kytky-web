@@ -1,5 +1,6 @@
 import { Instagram, Facebook } from "lucide-react"
 import { contact, nav, photos } from "@/lib/content"
+import { cz } from "@/lib/typo"
 
 export function Footer() {
   const p = photos.footer
@@ -49,7 +50,7 @@ export function Footer() {
                 className="mb-5 h-24 w-auto"
               />
               <p className="mb-6 max-w-xs text-sm text-muted-foreground">
-                Martina Drexlerová — svatební, oslavní a smuteční floristika. Praha a okolí.
+                {cz("Martina Drexlerová — květiny na svatby, oslavy i poslední rozloučení. Praha a okolí.")}
               </p>
               <div className="flex gap-3">
                 <a

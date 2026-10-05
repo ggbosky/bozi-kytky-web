@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { steps } from "@/lib/content"
+import { cz } from "@/lib/typo"
 
 // Na místě referencí ze šablony. Skutečné reference zatím nejsou a vymýšlet je nebudeme.
 export function StepsSection() {
@@ -29,8 +30,8 @@ export function StepsSection() {
               }}
             >
               <span className="mb-8 text-6xl font-light leading-none text-blush tabular-nums">0{i + 1}</span>
-              <h3 className="mb-3 text-2xl font-extrabold leading-tight tracking-[-0.02em] text-green-ink">{s.title}</h3>
-              <p className="leading-relaxed text-muted-foreground">{s.text}</p>
+              <h3 className="mb-3 text-2xl font-extrabold leading-tight tracking-[-0.02em] text-green-ink">{cz(s.title)}</h3>
+              <p className="leading-relaxed text-muted-foreground">{cz(s.text)}</p>
             </motion.li>
           ))}
         </ol>

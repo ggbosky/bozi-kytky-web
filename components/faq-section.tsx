@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { ChevronDown } from "lucide-react"
 import { faqs } from "@/lib/content"
+import { cz } from "@/lib/typo"
 import { cn } from "@/lib/utils"
 
 // Harmonika: otevřená je vždy nejvýš jedna otázka. Pevná ID (ne generovaná),
@@ -42,7 +43,7 @@ export function FAQSection() {
                   >
                     <span className="flex gap-4">
                       <span className="tabular-nums text-rose">0{index + 1}</span>
-                      {faq.q}
+                      {cz(faq.q)}
                     </span>
                     <ChevronDown
                       aria-hidden="true"
@@ -64,7 +65,7 @@ export function FAQSection() {
                   <div className="overflow-hidden">
                     <div className="space-y-3 pb-5 pl-9 text-[15px] leading-relaxed text-muted-foreground">
                       {faq.a.map((p) => (
-                        <p key={p}>{p}</p>
+                        <p key={p}>{cz(p)}</p>
                       ))}
                     </div>
                   </div>

@@ -3,6 +3,7 @@
 import { Heart, Flower2, Leaf, type LucideIcon } from "lucide-react"
 import { useEffect, useRef, useState } from "react"
 import { photos, services } from "@/lib/content"
+import { cz } from "@/lib/typo"
 
 const icons: Record<(typeof services)[number]["icon"], LucideIcon> = {
   heart: Heart,
@@ -87,8 +88,9 @@ export function ServicesSection() {
               </h2>
               <div className="space-y-6 text-lg leading-relaxed text-white/90">
                 <p>
-                  Spousta inspirace z mé práce je zde na stránkách, avšak každá kytice je originál… Zavolejte nebo napište
-                  a další takový originál pro vás ráda vytvořím.
+                  {cz(
+                    "Spousta inspirace z mé práce je zde na stránkách, avšak každá kytice je originál… Zavolejte nebo napište a další takový originál pro vás ráda vytvořím.",
+                  )}
                 </p>
               </div>
             </div>
@@ -112,13 +114,13 @@ export function ServicesSection() {
                 <AnimatedIcon Icon={icons[s.icon]} />
               </div>
               <h3 className="mb-3 text-2xl font-extrabold tracking-[-0.02em] text-green-ink">{s.title}</h3>
-              <p className="mb-6 text-sm leading-relaxed text-muted-foreground">{s.text}</p>
+              <p className="mb-6 text-sm leading-relaxed text-muted-foreground">{cz(s.text)}</p>
               {s.facts.length > 0 && (
                 <dl className="space-y-3 border-t border-border pt-5 text-left text-sm">
                   {s.facts.map((f) => (
                     <div key={f.k} className="grid grid-cols-[7.5rem_1fr] gap-3">
                       <dt className="text-[11px] uppercase tracking-[0.14em] text-rose">{f.k}</dt>
-                      <dd className="text-green-ink">{f.v}</dd>
+                      <dd className="text-green-ink">{cz(f.v)}</dd>
                     </div>
                   ))}
                 </dl>
