@@ -83,16 +83,12 @@ export function ServicesSection() {
             <div>
               <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-blush">Jak pracuji</p>
               <h2 className="mb-8 text-balance text-4xl font-extrabold leading-[1.1] tracking-[-0.03em] text-white lg:text-5xl">
-                Nedělám katalog, ze kterého se vybírá.
+                Nedělám katalog, ze kterého se vybírá…
               </h2>
-              <div className="space-y-6 leading-relaxed text-white/90">
+              <div className="space-y-6 text-lg leading-relaxed text-white/90">
                 <p>
-                  Řeknete mi, o co jde a pro koho to je, a já z toho něco udělám. Ke každé zakázce si sednu osobně nebo si
-                  zavoláme.
-                </p>
-                <p>
-                  Potřebuju vědět, pro koho ty květiny jsou, jaké má ten člověk barvy a co se ten den vlastně děje. Teprve
-                  pak vybírám, co do vazby půjde.
+                  Spousta inspirace z mé práce je zde na stránkách, avšak každá kytice je originál… Zavolejte nebo napište
+                  a další takový originál pro vás ráda vytvořím.
                 </p>
               </div>
             </div>
@@ -117,14 +113,16 @@ export function ServicesSection() {
               </div>
               <h3 className="mb-3 text-2xl font-extrabold tracking-[-0.02em] text-green-ink">{s.title}</h3>
               <p className="mb-6 text-sm leading-relaxed text-muted-foreground">{s.text}</p>
-              <dl className="space-y-3 border-t border-border pt-5 text-left text-sm">
-                {s.facts.map((f) => (
-                  <div key={f.k} className="grid grid-cols-[7.5rem_1fr] gap-3">
-                    <dt className="text-[11px] uppercase tracking-[0.14em] text-rose">{f.k}</dt>
-                    <dd className="text-green-ink">{f.v}</dd>
-                  </div>
-                ))}
-              </dl>
+              {s.facts.length > 0 && (
+                <dl className="space-y-3 border-t border-border pt-5 text-left text-sm">
+                  {s.facts.map((f) => (
+                    <div key={f.k} className="grid grid-cols-[7.5rem_1fr] gap-3">
+                      <dt className="text-[11px] uppercase tracking-[0.14em] text-rose">{f.k}</dt>
+                      <dd className="text-green-ink">{f.v}</dd>
+                    </div>
+                  ))}
+                </dl>
+              )}
             </article>
           ))}
         </div>

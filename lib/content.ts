@@ -93,31 +93,22 @@ export const services = [
   {
     icon: "heart",
     title: "Svatby",
-    text: "Kytice nevěsty, korsáže, výzdoba obřadu i tabule. Než začnu vázat, chci vědět, kde se to bude odehrávat, jaké jsou šaty a jaký je roční čas. Podle toho vybírám květiny — ne naopak.",
-    facts: [
-      { k: "Zahrnuje", v: "Kytici nevěsty, korsáže, výzdobu obřadu a tabule, dovoz i instalaci" },
-      { k: "Kdy se ozvat", v: "Ideálně 7–14 dní dopředu, u velkých svateb radši dřív" },
-    ],
+    text: "Ohledně květin na svatbu si s vámi ráda zavolám nebo si dáme schůzku a probereme detaily a vaši představu… Téměř vše je možné a nebojím se žádné výzvy 😊",
+    facts: [{ k: "Kdy se ozvat", v: "Ideálně 7–14 dní dopředu, u velkých svateb raději dřív" }],
   },
   {
     icon: "flower",
     title: "Oslavy a kytice",
-    text: "Narozeniny, jubileum, výročí nebo jen tak pro radost. Tady se dá nejvíc vyhrát barvou a taky se tu dá nejvíc ušetřit — stačí, když mi rozpočet řeknete rovnou.",
-    facts: [
-      { k: "Zahrnuje", v: "Vázané kytice, výzdobu tabule, uvítací vazby" },
-      { k: "Kdy se ozvat", v: "Kytice i na zavolání, velká výzdoba 7–14 dní dopředu" },
-    ],
+    text: "Narozeniny, jubileum, výročí, promoce nebo jen tak pro radost? Příležitostem se meze nekladou… Ráda vytvořím cokoliv nebo pomohu s výběrem 😊",
+    facts: [{ k: "Kdy se ozvat", v: "Kytice i na zavolání, velká výzdoba 7–14 dní dopředu" }],
   },
   {
     icon: "leaf",
     title: "Smuteční vazby",
-    text: "Věnce, vypichovaná srdce, kytice na rozloučenou. Snažím se, aby zadání zabralo pár minut a zbytek už byl na mně. Nemusí to být tmavá klasika. Když měl ten člověk rád barvy, uděláme barvy.",
-    facts: [
-      { k: "Zahrnuje", v: "Věnce, vypichovaná srdce, kytice na rozloučenou, dovoz na místo" },
-      { k: "Kdy se ozvat", v: "Ideálně 7–14 dní, ale zvládnu i ze dne na den" },
-    ],
+    text: "Věnce, kytice na rozloučenou, vypichovaná srdce či jiné květinové dary…",
+    facts: [],
   },
-] as const
+]
 
 export const reasons = [
   { title: "Mluvíte přímo se mnou.", text: "Píšete a voláte mně, ne recepci. Kytici pak vážu taky já." },
@@ -133,7 +124,7 @@ export const steps = [
   },
   {
     title: "Zavoláme si nebo se sejdeme",
-    text: "Potřebuju vědět, kde se to bude odehrávat, jaké má ten člověk barvy a co se ten den děje. Teprve pak vybírám květiny.",
+    text: "Potřebuju vědět, kde se to bude odehrávat a co se ten den děje. Teprve pak vybírám květiny.",
   },
   {
     title: "Vážu a přivezu",
