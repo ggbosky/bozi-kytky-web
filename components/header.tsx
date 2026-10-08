@@ -83,9 +83,6 @@ export function Header() {
                 <Phone className="h-4 w-4" />
                 {contact.phone}
               </a>
-              <PillButton href="#poptavka" variant="solid" size="sm" onClick={(e) => scrollToId(e, "poptavka", close)}>
-                Nezávazně poptat termín
-              </PillButton>
             </div>
           </nav>
         )}

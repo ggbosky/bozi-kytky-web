@@ -50,7 +50,7 @@ export function Footer() {
                 className="mb-5 h-24 w-auto"
               />
               <p className="mb-6 max-w-xs text-sm text-muted-foreground">
-                {cz("Martina Drexlerová — květiny na svatby, oslavy i poslední rozloučení. Praha a okolí.")}
+                {cz("Martina Drexlerová – Praha a okolí")}
               </p>
               <div className="flex gap-3">
                 <a

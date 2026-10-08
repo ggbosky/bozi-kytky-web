@@ -114,7 +114,7 @@ html {
   }
 }
 
-/* Kreslení ikon v sekci Co vážu */
+/* Kreslení ikon v sekci Co pro vás tvořím */
 @keyframes draw-path {
   from {
     stroke-dasharray: 1000;

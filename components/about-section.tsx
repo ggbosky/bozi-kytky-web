@@ -1,8 +1,7 @@
 "use client"
 
-import { Check } from "lucide-react"
 import { motion } from "framer-motion"
-import { photos, reasons } from "@/lib/content"
+import { about, photos } from "@/lib/content"
 import { cz } from "@/lib/typo"
 
 // Jen fotka, bez rámečků a „živých“ štítků — ty působily jako šablona z AI.
@@ -50,54 +49,36 @@ export function AboutSection() {
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl">
-        <div className="grid items-center gap-16 lg:grid-cols-2">
-          <div className="order-2 lg:order-1">
+        <div className="grid items-start gap-16 lg:grid-cols-2">
+          <div className="order-2 lg:sticky lg:top-28 lg:order-1">
             <Portrait />
           </div>
 
-          <div className="order-1 space-y-8 lg:order-2">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.24em] text-rose">O mně</p>
-              <h2 className="mb-6 text-balance text-4xl font-extrabold leading-[1.1] tracking-[-0.03em] text-green md:text-5xl">
-                Martina Drexlerová
-              </h2>
-              <p className="mb-4 text-lg leading-relaxed text-green-ink">
-                {cz("Jmenuju se Martina a vážu květiny pro svatby, oslavy i poslední rozloučení.")}
-              </p>
-              <p className="leading-relaxed text-muted-foreground">
-                {cz(
-                  "Mám ráda, když přijdete s něčím, co jsem ještě nedělala. Výzvy mě baví a vždycky se pokusím o co nejlepší výsledek.",
-                )}
-              </p>
-              <p className="mt-6 text-lg font-semibold text-rose">— vždycky věřím, že se domluvíme.</p>
-            </motion.div>
-
-            <ul className="grid gap-4 sm:grid-cols-2">
-              {reasons.map((r, index) => (
-                <motion.li
-                  key={r.title}
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="flex gap-3 rounded-xl p-3 transition-colors duration-300 hover:bg-blush-soft"
-                >
-                  <span className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-green shadow-md">
-                    <Check className="h-3.5 w-3.5 text-blush" strokeWidth={2.5} />
-                  </span>
-                  <span className="text-sm leading-relaxed text-muted-foreground">
-                    <strong className="block font-semibold text-green-ink">{cz(r.title)}</strong>
-                    {cz(r.text)}
-                  </span>
-                </motion.li>
+          <motion.div
+            className="order-1 lg:order-2"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true, amount: 0.1 }}
+          >
+            <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.24em] text-rose">O mně</p>
+            <h2 className="mb-8 text-balance text-4xl font-extrabold leading-[1.1] tracking-[-0.03em] text-green md:text-5xl">
+              Martina Drexlerová
+            </h2>
+            <div className="space-y-4 leading-relaxed text-muted-foreground">
+              {about.intro.map((t, i) => (
+                <p key={t} className={i === 0 ? "text-lg text-green-ink" : undefined}>
+                  {cz(t)}
+                </p>
               ))}
-            </ul>
-          </div>
+            </div>
+            <h3 className="mb-4 mt-12 text-2xl font-extrabold tracking-[-0.02em] text-green-ink">{about.subheading}</h3>
+            <div className="space-y-4 leading-relaxed text-muted-foreground">
+              {about.body.map((t) => (
+                <p key={t}>{cz(t)}</p>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

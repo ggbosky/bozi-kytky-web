@@ -2,11 +2,13 @@
 
 import { useEffect, useRef, useState } from "react"
 import { useReducedMotion } from "framer-motion"
-import { galleryRows, type Photo } from "@/lib/content"
+import { galleryGroups, type Photo } from "@/lib/content"
 import { cz } from "@/lib/typo"
 import { Lightbox } from "./lightbox"
 
-const allPhotos = galleryRows.flat()
+const allPhotos = galleryGroups.flatMap((g) => g.photos)
+// pořadí první fotky každé řady v allPhotos (kvůli prohlížeči)
+const offsets = galleryGroups.map((_, i) => galleryGroups.slice(0, i).reduce((n, g) => n + g.photos.length, 0))
 
 // Nekonečná řada fotek. Najetím myší se zpomalí (jako karty v šabloně), nezastaví.
 function MarqueeRow({
@@ -99,9 +101,6 @@ function MarqueeRow({
                 className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               />
               <span className="absolute inset-0 bg-gradient-to-t from-green-ink/70 via-green-ink/0 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-              <span className="absolute left-3 top-3 rounded-full bg-white/85 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.14em] text-green-ink backdrop-blur-sm">
-                {p.tag}
-              </span>
               <span className="absolute bottom-4 left-4 right-4 translate-y-2 text-left text-sm leading-snug text-white opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
                 {cz(p.alt)}
               </span>
@@ -120,17 +119,20 @@ export function GallerySection() {
     <section id="galerie" className="overflow-hidden py-32">
       <div className="mx-auto mb-16 max-w-7xl px-6 text-center">
         <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.24em] text-rose">Galerie</p>
-        <h2 className="mb-6 text-balance text-4xl font-extrabold leading-[1.1] tracking-[-0.03em] text-green md:text-5xl">
-          Tohle jsem vázala.
+        <h2 className="text-balance text-4xl font-extrabold leading-[1.1] tracking-[-0.03em] text-green md:text-5xl">
+          Má tvorba
         </h2>
-        <p className="mx-auto max-w-2xl leading-relaxed text-muted-foreground">
-          Všechno moje práce. Klepnutím se fotka otevře přes celou obrazovku, šipkami procházíte dál.
-        </p>
       </div>
 
-      <div className="space-y-5">
-        <MarqueeRow items={galleryRows[0]} offset={0} onOpen={setOpen} />
-        <MarqueeRow items={galleryRows[1]} offset={galleryRows[0].length} reverse onOpen={setOpen} />
+      <div className="space-y-14">
+        {galleryGroups.map((g, i) => (
+          <div key={g.title}>
+            <h3 className="mx-auto mb-5 max-w-7xl px-6 text-2xl font-extrabold tracking-[-0.02em] text-green-ink md:text-3xl">
+              {g.title}
+            </h3>
+            <MarqueeRow items={g.photos} offset={offsets[i]} reverse={i % 2 === 1} onOpen={setOpen} />
+          </div>
+        ))}
       </div>
 
       <Lightbox items={allPhotos} index={open} onChange={setOpen} />

@@ -136,17 +136,10 @@ export function HeroSection() {
         </div>
       </div>
 
-      <div className="relative z-10 mx-auto flex w-full max-w-7xl px-6 pt-28 sm:pt-32 md:min-h-[100svh] md:items-center md:pb-[20vw] md:pt-24">
+      <div className="relative z-10 mx-auto flex w-full max-w-7xl px-6 pt-28 sm:pt-32 md:min-h-[100svh] md:items-end md:pb-[calc(3svh+min(72vw,68rem)*0.262+2.5rem)] md:pt-24">
         <div className="w-full">
-          <p
-            className={`text-center text-[4rem] font-extrabold leading-[1.05] tracking-[-0.03em] text-white [text-shadow:0_1px_3px_rgba(26,42,32,.5),0_4px_40px_rgba(26,42,32,.55)] transition-all delay-300 duration-1000 sm:text-8xl md:text-left md:text-7xl lg:text-[5.5rem] xl:text-[7.5rem] 2xl:text-[8rem] ${
-              isVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
-            }`}
-          >
-            Mé tvoření
-          </p>
           <div
-            className={`mt-10 hidden flex-wrap gap-4 transition-all delay-700 duration-1000 md:flex ${
+            className={`hidden flex-wrap gap-4 transition-all delay-700 duration-1000 md:flex ${
               isVisible ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
             }`}
           >
