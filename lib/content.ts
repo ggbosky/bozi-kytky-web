@@ -125,7 +125,7 @@ export const galleryGroups: GalleryGroup[] = [
     photos: [
       img("smutecni-srdce", 1000, 1334, "Vypichované smuteční srdce z bílých a růžových gerber a chryzantém", "Rozloučení"),
       img("smutecni-venec-stuha", 1200, 1600, "Smuteční věnec s černou stuhou z barevných chryzantém, kal a gerber", "Rozloučení"),
-      img("smutecni-kopretiny", 1200, 1600, "Smuteční vazba z kopretin a polních květů", "Rozloučení"),
+      img("smutecni-kopretiny", 1200, 1600, "Smuteční srdce z bílých gerber a kopretin na stojanu", "Rozloučení"),
       img("smutecni-venec-barevny", 1200, 1600, "Barevný smuteční věnec bez tmavé klasiky", "Rozloučení"),
       img("smutecni-venec", 1200, 1600, "Smuteční věnec ze zeleně a bílých květů", "Rozloučení"),
     ],
