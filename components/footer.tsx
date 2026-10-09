@@ -43,7 +43,7 @@ export function Footer() {
             <div className="col-span-2">
               <img
                 src="/images/logo-kombinace.png"
-                alt="Boží Kytky"
+                alt="Boží kytky"
                 width={900}
                 height={763}
                 loading="lazy"

@@ -55,15 +55,9 @@ export function ServicesSection() {
   const p = photos.banner
 
   return (
-    <section id="co-vazu" className="relative overflow-hidden px-6 pb-24 pt-32">
-      <div className="pointer-events-none absolute left-0 right-0 top-0 z-0 flex justify-center" aria-hidden="true">
-        <span className="whitespace-nowrap text-center text-[17vw] font-extrabold uppercase leading-none tracking-tighter text-ghost md:text-[14vw] lg:text-[12vw]">
-          Kytice
-        </span>
-      </div>
-
+    <section id="co-vazu" className="relative overflow-hidden px-6 pb-24 pt-24">
       <div className="relative z-10 mx-auto max-w-7xl">
-        <div ref={bannerRef} className="relative mb-32 overflow-hidden rounded-3xl px-6 py-16 lg:px-12 lg:py-20">
+        <div ref={bannerRef} className="relative mb-16 overflow-hidden rounded-3xl px-6 py-16 lg:px-12 lg:py-20">
           <div className="absolute inset-0 h-full w-full">
             <img
               src={p.src}
@@ -95,16 +89,6 @@ export function ServicesSection() {
               </div>
             </div>
           </div>
-        </div>
-
-        <div className="mb-20 text-center">
-          <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.24em] text-rose">Co pro vás tvořím</p>
-          <h2 className="mb-6 text-balance text-4xl font-extrabold leading-[1.1] tracking-[-0.03em] text-green md:text-5xl">
-            Tři věci, a&nbsp;pokaždé jinak.
-          </h2>
-          <p className="mx-auto max-w-2xl leading-relaxed text-muted-foreground">
-            Tohle jsou tři situace, kvůli kterým mi lidé volají nejčastěji.
-          </p>
         </div>
 
         <div className="grid gap-8 md:grid-cols-3">

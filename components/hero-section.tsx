@@ -13,7 +13,7 @@ function Napis() {
       animate={{ clipPath: "inset(-15% 0% -15% 0)", opacity: 1 }}
       transition={{ duration: 1.8, delay: 0.3, ease: [0.65, 0, 0.35, 1] }}
     >
-      <span className="sr-only">Boží Kytky — floristika Martiny Drexlerové</span>
+      <span className="sr-only">Boží kytky – floristika Martiny Drexlerové</span>
       <img
         src="/images/napis-bozi-kytky.svg?v=2"
         alt=""
@@ -99,13 +99,25 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Velký nápis „Boží kytky“ na spodku úvodu (jako slovo HOMIE v šabloně). Stojí před Martinou,
-          jinak by „kytky“ zmizelo za kyticí; při rolování klesne a zeslábne. */}
+      {/* Velký nápis „Boží kytky“ na spodku úvodu a hned pod ním tlačítka (na počítači) — jeden celek.
+          Stojí před Martinou, jinak by „kytky“ zmizelo za kyticí; při rolování klesne a zeslábne. */}
       <div
-        className="pointer-events-none absolute bottom-[3svh] left-1/2 z-[7] w-[94vw] -translate-x-1/2 md:left-[max(1.5rem,calc(50%-38.5rem))] md:w-[min(72vw,68rem)] md:translate-x-0"
+        className="pointer-events-none absolute bottom-[3svh] left-1/2 z-[7] w-[94vw] -translate-x-1/2 md:bottom-[5svh] md:left-[max(1.5rem,calc(50%-38.5rem))] md:w-[min(76vw,74rem)] md:translate-x-0"
         style={{ transform: `translateY(${scrollProgress * 150}px)`, opacity: 1 - scrollProgress * 0.9 }}
       >
         <Napis />
+        <div
+          className={`pointer-events-auto mt-6 hidden flex-wrap gap-4 transition-all delay-700 duration-1000 md:flex ${
+            isVisible ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
+          }`}
+        >
+          <PillButton href="#poptavka" variant="white" onClick={(e) => scrollToId(e, "poptavka")}>
+            Nezávazně poptat termín
+          </PillButton>
+          <PillButton href="#galerie" variant="light" onClick={(e) => scrollToId(e, "galerie")}>
+            Prohlédnout tvorbu
+          </PillButton>
+        </div>
       </div>
 
       {/* Martina bez pozadí — vyjede zespodu (jako mobil v šabloně), stojí vpravo přes velký nápis
@@ -136,22 +148,6 @@ export function HeroSection() {
         </div>
       </div>
 
-      <div className="relative z-10 mx-auto flex w-full max-w-7xl px-6 pt-28 sm:pt-32 md:min-h-[100svh] md:items-end md:pb-[calc(3svh+min(72vw,68rem)*0.262+2.5rem)] md:pt-24">
-        <div className="w-full">
-          <div
-            className={`hidden flex-wrap gap-4 transition-all delay-700 duration-1000 md:flex ${
-              isVisible ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
-            }`}
-          >
-            <PillButton href="#poptavka" variant="solid" onClick={(e) => scrollToId(e, "poptavka")}>
-              Nezávazně poptat termín
-            </PillButton>
-            <PillButton href="#galerie" variant="light" onClick={(e) => scrollToId(e, "galerie")}>
-              Prohlédnout práce
-            </PillButton>
-          </div>
-        </div>
-      </div>
     </section>
   )
 }

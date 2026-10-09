@@ -23,7 +23,7 @@ function InquiryForm() {
     const form = e.currentTarget
     if (!form.checkValidity()) {
       form.reportValidity()
-      setStatus({ tone: "err", text: "Vyplňte prosím jméno, e-mail a souhlas se zpracováním údajů." })
+      setStatus({ tone: "err", text: "Vyplňte prosím jméno a e-mail a potvrďte souhlas se zpracováním údajů." })
       return
     }
 
@@ -35,7 +35,7 @@ function InquiryForm() {
         const res = await fetch(ENDPOINT, { method: "POST", body: data, headers: { Accept: "application/json" } })
         if (!res.ok) throw new Error(String(res.status))
         form.reset()
-        setStatus({ tone: "ok", text: "Děkuju, poptávka dorazila. Ozvu se vám co nejdřív." })
+        setStatus({ tone: "ok", text: "Děkuji, poptávka dorazila. Ozvu se vám co nejdříve." })
       } catch {
         setStatus({ tone: "err", text: `Odeslání se nepovedlo. Napište mi prosím přímo na ${contact.email}.` })
       } finally {
@@ -58,7 +58,7 @@ function InquiryForm() {
       .map(([k, v]) => `${k}: ${v}`)
       .join("\n")
 
-    const subject = `Poptávka — ${data.get("typ") || "květiny"}`
+    const subject = `Poptávka – ${data.get("typ") || "květiny"}`
     window.location.href = `mailto:${contact.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines)}`
     setStatus({ tone: "ok", text: "Otevírám váš e-mailový program s předvyplněnou zprávou." })
   }
@@ -93,8 +93,8 @@ function InquiryForm() {
           <select id="f-type" name="typ" className={field}>
             <option>Svatba</option>
             <option>Oslava, narozeniny, jubileum</option>
-            <option>Smuteční vazba</option>
-            <option>Firemní a sezónní floristika</option>
+            <option>Dárková kytice</option>
+            <option>Poslední rozloučení</option>
             <option>Jiné</option>
           </select>
         </div>
@@ -110,7 +110,7 @@ function InquiryForm() {
       </div>
 
       <div>
-        <label htmlFor="f-place" className={label}>Místo konání / doručení</label>
+        <label htmlFor="f-place" className={label}>Místo konání</label>
         <input id="f-place" name="misto" placeholder="Obřadní síň, statek u lesa…" className={field} />
       </div>
 
@@ -143,12 +143,6 @@ function InquiryForm() {
 export function InquirySection() {
   return (
     <section id="poptavka" className="relative overflow-hidden px-6 py-32">
-      <div className="pointer-events-none absolute inset-0 flex select-none items-center justify-center" aria-hidden="true">
-        <span className="whitespace-nowrap text-[20vw] font-extrabold uppercase leading-none tracking-tighter text-ghost">
-          Květiny
-        </span>
-      </div>
-
       <div className="relative z-10 mx-auto max-w-7xl">
         <div className="mb-16 text-center">
           <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.24em] text-rose">Nezávazná poptávka</p>
@@ -157,7 +151,7 @@ export function InquirySection() {
           </h2>
           <p className="mx-auto mb-10 max-w-2xl leading-relaxed text-muted-foreground">
             {cz(
-              "Stačí pár řádků. Čím víc mi napíšete o tom, co chystáte a pro koho to je, tím líp — ozvu se vám zpátky s návrhem i cenou. Poptávka vás k ničemu nezavazuje.",
+              "Stačí pár řádků. Čím více mi napíšete o tom, co chystáte a pro koho to je, tím lépe – ozvu se vám s návrhem i cenou. Poptávka vás k ničemu nezavazuje.",
             )}
           </p>
 
@@ -192,10 +186,6 @@ export function InquirySection() {
             <p className="text-3xl font-light text-green-ink transition-colors group-hover:text-rose md:text-4xl">{contact.email}</p>
             <p className="mt-2 text-xs uppercase tracking-wider text-muted-foreground">E-mail</p>
           </a>
-          <div>
-            <p className="text-3xl font-light text-green-ink md:text-4xl">Praha a okolí</p>
-            <p className="mt-2 text-xs uppercase tracking-wider text-muted-foreground">dovezu a naaranžuju na místě</p>
-          </div>
         </div>
       </div>
     </section>

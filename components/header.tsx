@@ -22,9 +22,9 @@ export function Header() {
               close()
             }}
             className="flex items-center"
-            aria-label="Boží Kytky — úvod"
+            aria-label="Boží kytky – úvod"
           >
-            <img src="/images/logo-kombinace.png" alt="Boží Kytky" width={900} height={763} className="h-11 w-auto sm:h-12" />
+            <img src="/images/logo-kombinace.png" alt="Boží kytky" width={900} height={763} className="h-11 w-auto sm:h-12" />
           </a>
 
           <nav className="hidden items-center gap-8 md:flex" aria-label="Hlavní navigace">

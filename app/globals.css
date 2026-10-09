@@ -56,8 +56,6 @@ html {
   --border: #eadfdb;
   --input: #eadfdb;
   --ring: var(--green);
-  /* obří slova v pozadí sekcí */
-  --ghost: #f3e2df;
   --radius: 0.75rem;
 }
 
@@ -89,7 +87,6 @@ html {
   --color-rose: var(--rose);
   --color-shell: var(--shell);
   --color-craft: var(--craft);
-  --color-ghost: var(--ghost);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);

@@ -39,15 +39,6 @@ function Portrait() {
 export function AboutSection() {
   return (
     <section id="o-mne" className="relative overflow-hidden px-6 py-32">
-      <div
-        className="pointer-events-none absolute left-0 right-0 top-1/2 z-0 flex -translate-y-1/2 justify-center"
-        aria-hidden="true"
-      >
-        <span className="whitespace-nowrap text-center text-[19vw] font-extrabold uppercase leading-none tracking-tighter text-ghost md:text-[16vw] lg:text-[14vw]">
-          Martina
-        </span>
-      </div>
-
       <div className="relative z-10 mx-auto max-w-7xl">
         <div className="grid items-start gap-16 lg:grid-cols-2">
           <div className="order-2 lg:sticky lg:top-28 lg:order-1">

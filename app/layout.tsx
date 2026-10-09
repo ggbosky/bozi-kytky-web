@@ -7,16 +7,16 @@ import "./globals.css"
 // TODO: až bude doména jistá, ověřit metadataBase
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.bozikytky.cz"),
-  title: "Boží Kytky — autorská floristika Martiny Drexlerové | Praha",
+  title: "Boží kytky – floristika Martiny Drexlerové | Praha",
   description:
-    "Svatební kytice, výzdoba oslav a smuteční vazby na míru. Praha a okolí. Každou zakázku si s vámi projdu osobně.",
+    "Svatební floristika, dárkové kytice a květiny na poslední rozloučení. Na zakázku a z čerstvých květin. Praha a okolí.",
   authors: [{ name: "Martina Drexlerová" }],
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: "cs_CZ",
-    title: "Boží Kytky — autorská floristika Martiny Drexlerové",
-    description: "Svatební kytice, výzdoba oslav a smuteční vazby na míru. Praha a okolí.",
+    title: "Boží kytky – floristika Martiny Drexlerové",
+    description: "Svatební floristika, dárkové kytice a květiny na poslední rozloučení. Praha a okolí.",
     images: ["/images/cervenobila.jpg"],
   },
 }
@@ -28,9 +28,9 @@ export const viewport: Viewport = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Florist",
-  name: "Boží Kytky",
+  name: "Boží kytky",
   founder: "Martina Drexlerová",
-  description: "Svatební kytice, výzdoba oslav a smuteční vazby na míru.",
+  description: "Svatební floristika, dárkové kytice a květiny na poslední rozloučení. Na zakázku a z čerstvých květin.",
   image: "https://www.bozikytky.cz/images/cervenobila.jpg",
   telephone: "+420 723 528 088",
   address: { "@type": "PostalAddress", addressLocality: "Praha", addressCountry: "CZ" },

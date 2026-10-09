@@ -46,7 +46,7 @@ export const photos = {
     h: 1600,
     alt: "Martina Drexlerová s velkou kyticí z červených a bílých růží, orchidejí a eukalyptu",
   },
-  banner: img("atelier-kytice", 1440, 1440, "Rozvázaná kytice na pracovním stole", "Kytice"),
+  banner: img("atelier-kytice", 1440, 1440, "Kytice z broskvových karafiátů a bílých květů se stonky ovinutými stuhou", "Kytice"),
   portrait: img(
     "martina-portret",
     1280,
@@ -54,7 +54,7 @@ export const photos = {
     "Martina Drexlerová drží velkou vázanou kytici z červených a bílých růží, orchidejí a eukalyptu",
     "Kytice",
   ),
-  inquiry: img("nevesta-zavoj", 1367, 1594, "Nevěsta se závojem drží pudrovou kytici z růží a eukalyptu", "Svatba"),
+  inquiry: img("nevesta-zavoj", 1367, 1594, "Nevěsta se závojem a kyticí v pudrových tónech", "Svatba"),
   footer: img("kytice-jezero", 1600, 1200, "Kytice v bílých a krémových tónech u hladiny jezera", "Kytice"),
 }
 
@@ -67,18 +67,18 @@ export const galleryGroups: GalleryGroup[] = [
   {
     title: "Svatby",
     photos: [
-      img("svatba-bila-sada", 1600, 1200, "Sada bílých svatebních kytic pro nevěstu a družičky položená na kameni v trávě", "Svatba"),
-      img("nevesta-bila", 1066, 1600, "Nevěsta v krajkových šatech drží kytici z bílých růží a sukulentů", "Svatba"),
+      img("svatba-bila-sada", 1600, 1200, "Sada bílých svatebních kytic pro nevěstu a družičky na kameni v trávě", "Svatba"),
+      img("nevesta-bila", 1066, 1600, "Nevěsta v krajkových šatech s kyticí z krémových růží a eukalyptu", "Svatba"),
       img("cervenobila", 1440, 1081, "Červenobílé svatební kytice rozložené na kameni u vodní hladiny", "Svatba"),
-      img("podzimni-prsteny", 1199, 1600, "Kytice z jiřin a růží ve vínové paletě s prsteny položenými na květech", "Svatba"),
-      img("nevesta-zavoj", 1367, 1594, "Nevěsta se závojem a vázanou kyticí", "Svatba"),
-      img("svatba-par", 1600, 1067, "Novomanželé s kyticí po obřadu", "Svatba"),
-      img("svatba-pivonky", 1440, 1440, "Svatební kytice z pivoněk v pudrových tónech", "Svatba"),
-      img("nevesta-krem", 1034, 1551, "Nevěsta drží krémovou kytici vázanou volně", "Svatba"),
-      img("louka-svatba", 978, 1231, "Svatební vazba na rozkvetlé louce", "Svatba"),
-      img("svatba-bile-vazby", 1600, 1200, "Bílé svatební vazby připravené k instalaci", "Svatba"),
-      img("podzimni-nevesta", 1199, 1600, "Nevěsta s podzimní kyticí ve vínových a měděných tónech", "Svatba"),
-      img("nevesta-cela", 1067, 1600, "Nevěsta v celé postavě s vázanou kyticí", "Svatba"),
+      img("podzimni-prsteny", 1199, 1600, "Kytice z jiřin a růží v oranžových a vínových tónech se snubními prsteny", "Svatba"),
+      img("nevesta-zavoj", 1367, 1594, "Nevěsta se závojem a kyticí v pudrových tónech", "Svatba"),
+      img("svatba-par", 1600, 1067, "Novomanželé s kyticí v růžových tónech", "Svatba"),
+      img("svatba-pivonky", 1440, 1440, "Svatební kytice z pivoněk a růží v růžových tónech na lavici", "Svatba"),
+      img("nevesta-krem", 1034, 1551, "Nevěsta s krémovou kyticí z růží", "Svatba"),
+      img("louka-svatba", 978, 1231, "Novomanželé s barevnou kyticí při obřadu v přírodě", "Svatba"),
+      img("svatba-bile-vazby", 1600, 1200, "Dvě bílé svatební kytice na kameni v trávě", "Svatba"),
+      img("podzimni-nevesta", 1199, 1600, "Nevěsta s podzimní kyticí v oranžových a vínových tónech", "Svatba"),
+      img("nevesta-cela", 1067, 1600, "Nevěsta v celé postavě s kyticí v zahradě", "Svatba"),
     ],
   },
   {
@@ -113,21 +113,21 @@ export const galleryGroups: GalleryGroup[] = [
       k(60, 1201, 1600, "Květinový box s fialovými a růžovými květy"),
       k(54, 1200, 1600, "Květinový box s růžovými karafiáty na lavici"),
       img("kytice-jezero", 1600, 1200, "Kytice v bílých a krémových tónech u hladiny jezera", "Kytice"),
-      img("modrobila-zahrada", 1440, 1165, "Modrobílá kytice na zahradním stole", "Kytice"),
-      img("kytice-lavice", 1600, 1200, "Kytice odložená na dřevěné lavici v zahradě", "Kytice"),
-      img("atelier-kytice", 1440, 1440, "Rozvázaná kytice na pracovním stole", "Kytice"),
-      img("kytice-kamen", 1440, 1440, "Vazba v pudrových tónech položená na kameni", "Kytice"),
-      img("detail-vazba", 1440, 1440, "Detail vazby — stonky a úvazek zblízka", "Detail"),
+      img("modrobila-zahrada", 1440, 1165, "Bílá kytice s modrými květy", "Kytice"),
+      img("kytice-lavice", 1600, 1200, "Dvě kytice v broskvových a zelenkavých tónech na dřevěné lavici", "Kytice"),
+      img("atelier-kytice", 1440, 1440, "Kytice z broskvových karafiátů a bílých květů se stonky ovinutými stuhou", "Kytice"),
+      img("kytice-kamen", 1440, 1440, "Kytice v pudrových tónech na kameni", "Kytice"),
+      img("detail-vazba", 1440, 1440, "Detail kytice s pivoňkami v broskvových a růžových tónech", "Detail"),
     ],
   },
   {
-    title: "Rozloučení",
+    title: "Poslední rozloučení",
     photos: [
-      img("smutecni-srdce", 1000, 1334, "Vypichované smuteční srdce z bílých a růžových gerber a chryzantém", "Rozloučení"),
-      img("smutecni-venec-stuha", 1200, 1600, "Smuteční věnec s černou stuhou z barevných chryzantém, kal a gerber", "Rozloučení"),
+      img("smutecni-srdce", 1000, 1334, "Vypichované smuteční srdce v bílých, růžových a vínových tónech", "Rozloučení"),
+      img("smutecni-venec-stuha", 1200, 1600, "Barevný smuteční věnec s černou stuhou", "Rozloučení"),
       img("smutecni-kopretiny", 1200, 1600, "Smuteční srdce z bílých gerber a kopretin na stojanu", "Rozloučení"),
-      img("smutecni-venec-barevny", 1200, 1600, "Barevný smuteční věnec bez tmavé klasiky", "Rozloučení"),
-      img("smutecni-venec", 1200, 1600, "Smuteční věnec ze zeleně a bílých květů", "Rozloučení"),
+      img("smutecni-venec-barevny", 1200, 1600, "Smuteční věnec z oranžových gerber a žlutých a bílých květů", "Rozloučení"),
+      img("smutecni-venec", 1200, 1600, "Smuteční věnec z červených a bílých květů", "Rozloučení"),
     ],
   },
 ]
@@ -172,27 +172,12 @@ export const about = {
   ],
 }
 
-export const steps = [
-  {
-    title: "Napíšete mi, co chystáte",
-    text: "Stačí pár řádků — o jakou příležitost jde, kdy to je a pro koho. Rozpočet klidně rovnou, usnadní mi to práci.",
-  },
-  {
-    title: "Zavoláme si nebo se sejdeme",
-    text: "Potřebuju vědět, kde se to bude odehrávat a co se ten den děje. Teprve pak vybírám květiny.",
-  },
-  {
-    title: "Vážu a přivezu",
-    text: "Po Praze a okolí dovezu a naaranžuju přímo na místě.",
-  },
-]
-
 // Odpovědi jsou doslova Martinina slova, včetně smajlíků — neupravovat do úředního tónu.
 export const faqs = [
   {
     q: "Kolik mě to bude stát?",
     a: [
-      "Vždycky potřebuji konkrétní představu klienta. Když se někdo zeptá, na kolik vyjde například svatba, potřebuji znát zadání — někdo má skromnou výzdobu, jiný chce koberce na zeď z květin. Ale vždycky věřím, že se domluvíme 😊",
+      "Vždycky potřebuji konkrétní představu klienta. Když se někdo zeptá, na kolik vyjde například svatba, potřebuji znát zadání – někdo má skromnou výzdobu, jiný chce koberce na zeď z květin. Ale vždycky věřím, že se domluvíme 😊",
     ],
   },
   {
@@ -204,8 +189,8 @@ export const faqs = [
   {
     q: "Jak dlouho to trvá a kdy se ozvat?",
     a: [
-      "Dárkovou kytici zvládnu, když to jde, na zavolání — pokud jsem zrovna k dispozici 😊 Velké dekorace, svatby a smuteční vazby ideálně 7–14 dní dopředu.",
-      "Umím reagovat i ze dne na den, ovšem tam už může nastat problém, že nebudou skladem přesně ty květiny, které chcete. Mám ale ráda různé výzvy a vždycky se pokusím o co nejlepší výsledek za každou cenu 😊",
+      "Dárkovou kytici zvládnu, když to jde, na zavolání – pokud jsem zrovna k dispozici 😊 Velké dekorace a svatby ideálně 7–14 dní dopředu.",
+      "Umím reagovat i ze dne na den, ovšem tam už může nastat problém, že nebudou dostupné přesně ty květiny, které chcete. Mám ale ráda různé výzvy a vždycky se pokusím o co nejlepší výsledek za každou cenu 😊",
     ],
   },
 ]

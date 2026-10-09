@@ -2,7 +2,7 @@ import type React from "react"
 import { ArrowRight } from "lucide-react"
 import { cn } from "@/lib/utils"
 
-type Variant = "solid" | "outline" | "light"
+type Variant = "solid" | "outline" | "light" | "white"
 type Size = "sm" | "md"
 
 const EASE = "ease-[cubic-bezier(.22,1,.36,1)]"
@@ -19,10 +19,16 @@ const variants: Record<Variant, { button: string; fill: string }> = {
     button: "border border-green/25 text-green-ink hover:border-green hover:text-shell",
     fill: "bg-green",
   },
-  // na fotce: bílý obrys; po najetí se zaplní bílou
+  // na fotce: bílý obrys na ztmaveném podkladu; po najetí se zaplní bílou
   light: {
-    button: "border border-white/60 text-white hover:border-white hover:text-green-ink",
+    button: "border border-white/80 bg-green-ink/45 text-white hover:border-white hover:text-green-ink",
     fill: "bg-white",
+  },
+  // na fotce: plné bílé; po najetí zespodu vyjede růžová
+  white: {
+    button:
+      "bg-white text-green-ink shadow-[0_14px_30px_-14px_rgba(26,42,32,.7)] hover:shadow-[0_18px_36px_-14px_rgba(26,42,32,.55)]",
+    fill: "bg-blush",
   },
 }
 
