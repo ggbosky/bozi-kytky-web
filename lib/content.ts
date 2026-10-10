@@ -223,7 +223,7 @@ export const reviews: Review[] = [
 // Odpovědi jsou doslova Martinina slova, včetně smajlíků — neupravovat do úředního tónu.
 export const faqs = [
   {
-    q: "Kolik mě to bude stát?",
+    q: "Kolik mě budou květiny stát?",
     a: [
       "Vždycky potřebuji konkrétní představu klienta. Když se někdo zeptá, na kolik vyjde například svatba, potřebuji znát zadání – někdo má skromnou výzdobu, jiný chce koberce na zeď z květin. Ale vždycky věřím, že se domluvíme 😊",
     ],
