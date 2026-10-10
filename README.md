@@ -26,9 +26,13 @@ Na hosting se nahrává **jen obsah složky `out/`** — je to čisté HTML, CSS
 | `X/` | zdrojová loga, logomanuál, písma — jen lokálně, není v repozitáři |
 | `fotky/` | originály fotek — jen lokálně, není v repozitáři |
 
+## Poptávkový formulář
+
+Odesílá se přes [FormSubmit](https://formsubmit.co) na adresu `contact.email` z `lib/content.ts`
+(Martina.v3@seznam.cz), bez účtu a bez serveru. Úplně první odeslání pošle na tuto adresu aktivační
+e-mail od FormSubmit — po kliknutí na „Activate Form“ chodí všechny poptávky rovnou do schránky.
+Změna adresy = upravit `contact.email` (a novou adresu znovu jednou aktivovat).
+
 ## Co zbývá doplnit (v kódu označené `TODO`)
 
-1. Odesílání formuláře — bez nastavení otevře předvyplněný e-mail;
-   pro odeslání na pozadí stačí vyplnit `ENDPOINT` v `components/inquiry-section.tsx`
-   (Formspree, Web3Forms, vlastní skript).
-2. Doména v `app/layout.tsx` (`metadataBase`), pokud nebude `www.bozikytky.cz`.
+1. Doména v `app/layout.tsx` (`metadataBase`), pokud nebude `www.bozikytky.cz`.

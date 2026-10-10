@@ -6,9 +6,15 @@ import { contact } from "@/lib/content"
 import { cz } from "@/lib/typo"
 import { PillButton, ButtonInner, buttonClass } from "./pill-button"
 
-// Formulář umí dva režimy: bez ENDPOINT otevře předvyplněný e-mail,
-// s adresou (Formspree, Web3Forms, vlastní skript…) odešle data na pozadí.
-const ENDPOINT = ""
+// Odesílání přes FormSubmit (formsubmit.co) — bez účtu a bez vlastního serveru, poptávky chodí na contact.email.
+// Úplně první odeslání pošle na tuto adresu aktivační e-mail; po kliknutí na „Activate Form“ už chodí všechny
+// poptávky rovnou do schránky. Na poptávku jde odpovědět přímo z e-mailu (odpověď míří na adresu zákazníka).
+const ENDPOINT = `https://formsubmit.co/ajax/${contact.email}`
+
+const czDate = (iso: string) => {
+  const [y, m, d] = iso.split("-")
+  return y && m && d ? `${Number(d)}. ${Number(m)}. ${y}` : iso
+}
 
 const field =
   "w-full rounded-xl border border-border bg-shell px-4 py-3 text-base text-green-ink placeholder:text-muted-foreground/60 transition-colors focus:border-green focus:bg-white focus:outline-none"
@@ -28,39 +34,48 @@ function InquiryForm() {
     }
 
     const data = new FormData(form)
-
-    if (ENDPOINT) {
-      setSending(true)
-      try {
-        const res = await fetch(ENDPOINT, { method: "POST", body: data, headers: { Accept: "application/json" } })
-        if (!res.ok) throw new Error(String(res.status))
-        form.reset()
-        setStatus({ tone: "ok", text: "Děkuji, poptávka dorazila. Ozvu se vám co nejdříve." })
-      } catch {
-        setStatus({ tone: "err", text: `Odeslání se nepovedlo. Napište mi prosím přímo na ${contact.email}.` })
-      } finally {
-        setSending(false)
-      }
-      return
+    const get = (k: string) => String(data.get(k) ?? "").trim()
+    const payload: Record<string, string> = {
+      _subject: `Poptávka z webu – ${get("typ") || "květiny"} (${get("jmeno")})`,
+      _template: "table",
+      _captcha: "false",
+      _replyto: get("email"),
+      _honey: get("_honey"),
+      "Jméno a příjmení": get("jmeno"),
+      "E-mail": get("email"),
+      Telefon: get("telefon") || "–",
+      "Datum akce / předání": get("datum") ? czDate(get("datum")) : "–",
+      "Typ akce": get("typ"),
+      "Předpokládaný rozpočet": get("rozpocet"),
+      "Představa a poznámka": get("poznamka") || "–",
     }
 
-    const lines = [
-      ["Jméno", data.get("jmeno")],
-      ["E-mail", data.get("email")],
-      ["Telefon", data.get("telefon")],
-      ["Datum akce", data.get("datum")],
-      ["Typ akce", data.get("typ")],
-      ["Rozpočet", data.get("rozpocet")],
-      ["Místo", data.get("misto")],
-      ["Představa", data.get("poznamka")],
-    ]
-      .filter(([, v]) => v)
-      .map(([k, v]) => `${k}: ${v}`)
-      .join("\n")
-
-    const subject = `Poptávka – ${data.get("typ") || "květiny"}`
-    window.location.href = `mailto:${contact.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines)}`
-    setStatus({ tone: "ok", text: "Otevírám váš e-mailový program s předvyplněnou zprávou." })
+    setSending(true)
+    setStatus(null)
+    try {
+      const res = await fetch(ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(payload),
+      })
+      const json = await res.json().catch(() => ({}))
+      if (res.ok && String(json.success) === "true") {
+        form.reset()
+        setStatus({ tone: "ok", text: "Děkuji, poptávka dorazila. Ozvu se vám co nejdříve." })
+      } else if (/activat/i.test(String(json.message ?? ""))) {
+        // jen při úplně prvním odeslání, než Martina formulář aktivuje
+        setStatus({
+          tone: "err",
+          text: `Formulář čeká na aktivaci: na ${contact.email} přišel e-mail od FormSubmit, stačí v něm kliknout na „Activate Form“.`,
+        })
+      } else {
+        throw new Error(String(json.message ?? res.status))
+      }
+    } catch {
+      setStatus({ tone: "err", text: `Odeslání se nepovedlo. Napište mi prosím přímo na ${contact.email}.` })
+    } finally {
+      setSending(false)
+    }
   }
 
   return (
@@ -110,14 +125,12 @@ function InquiryForm() {
       </div>
 
       <div>
-        <label htmlFor="f-place" className={label}>Místo konání</label>
-        <input id="f-place" name="misto" placeholder="Obřadní síň, statek u lesa…" className={field} />
-      </div>
-
-      <div>
         <label htmlFor="f-note" className={label}>Představa a poznámka</label>
         <textarea id="f-note" name="poznamka" rows={5} placeholder="Barvy, nálada, počet stolů, odkaz na inspiraci…" className={field} />
       </div>
+
+      {/* past na spamové roboty — člověk pole nevidí a nevyplní */}
+      <input type="text" name="_honey" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
 
       <label className="flex items-start gap-3 text-sm text-muted-foreground">
         <input type="checkbox" name="souhlas" required className="mt-1 h-4 w-4 accent-[var(--green)]" />

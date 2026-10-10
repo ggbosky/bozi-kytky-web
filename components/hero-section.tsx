@@ -107,7 +107,7 @@ export function HeroSection() {
       >
         <Napis />
         <div
-          className={`pointer-events-auto mt-6 hidden flex-wrap gap-4 transition-all delay-700 duration-1000 md:flex ${
+          className={`pointer-events-auto mt-6 hidden flex-wrap justify-center gap-4 transition-all delay-700 duration-1000 md:flex ${
             isVisible ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
           }`}
         >

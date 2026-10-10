@@ -5,7 +5,7 @@
 export const contact = {
   phone: "+420 723 528 088",
   phoneHref: "tel:+420723528088",
-  email: "info@bozikytky.cz",
+  email: "Martina.v3@seznam.cz",
   instagram: "https://www.instagram.com/bozi_kytky/",
   facebook: "https://www.facebook.com/Bozikytky/",
 }
