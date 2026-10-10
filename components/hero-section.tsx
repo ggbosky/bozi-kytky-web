@@ -103,7 +103,7 @@ export function HeroSection() {
           Stojí před Martinou, jinak by „kytky“ zmizelo za kyticí; při rolování klesne a zeslábne. */}
       <div
         className="pointer-events-none absolute bottom-[3svh] left-1/2 z-[7] w-[94vw] -translate-x-1/2 md:bottom-[5svh] md:left-[max(1.5rem,calc(50%-38.5rem))] md:w-[min(76vw,74rem)] md:translate-x-0"
-        style={{ transform: `translateY(${scrollProgress * 150}px)`, opacity: 1 - scrollProgress * 0.9 }}
+        style={{ transform: `translateY(${scrollProgress * 150}px)`, opacity: Math.max(0, 1 - scrollProgress * 1.6) }}
       >
         <Napis />
         <div

@@ -27,7 +27,7 @@ export function Header() {
             <img src="/images/logo-kombinace.png" alt="Boží kytky" width={900} height={763} className="h-11 w-auto sm:h-12" />
           </a>
 
-          <nav className="hidden items-center gap-8 md:flex" aria-label="Hlavní navigace">
+          <nav className="hidden items-center gap-5 md:flex lg:gap-8" aria-label="Hlavní navigace">
             {/* po najetí jen změna barvy a podtržení, které se vykreslí zleva */}
             {nav.map((item) => (
               <a

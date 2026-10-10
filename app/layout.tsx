@@ -35,6 +35,7 @@ const jsonLd = {
   telephone: "+420 723 528 088",
   address: { "@type": "PostalAddress", addressLocality: "Praha", addressCountry: "CZ" },
   areaServed: "Praha a okolí",
+  sameAs: ["https://www.instagram.com/bozi_kytky/", "https://www.facebook.com/Bozikytky/"],
 }
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

@@ -6,15 +6,15 @@ export const contact = {
   phone: "+420 723 528 088",
   phoneHref: "tel:+420723528088",
   email: "info@bozikytky.cz",
-  // TODO: doplnit skutečné odkazy na profily
-  instagram: "https://www.instagram.com/",
-  facebook: "https://www.facebook.com/",
+  instagram: "https://www.instagram.com/bozi_kytky/",
+  facebook: "https://www.facebook.com/Bozikytky/",
 }
 
 export const nav = [
   { id: "co-vazu", label: "Co pro vás tvořím" },
   { id: "o-mne", label: "O mně" },
   { id: "galerie", label: "Galerie" },
+  { id: "recenze", label: "Recenze" },
   { id: "faq", label: "FAQ" },
 ]
 
@@ -171,6 +171,54 @@ export const about = {
     "Každou zakázku ale beru jako malou výzvu – a vždycky se nejdříve pokusíme najít řešení.",
   ],
 }
+
+// Recenze z Facebooku (https://www.facebook.com/Bozikytky/reviews), staženo 10. 10. 2026 přes Apify.
+// Texty jsou skutečné, jen s opravenými překlepy a interpunkcí; fotky profilů uložené v public/images/recenze.
+export type Review = { name: string; date: string; text: string; photo?: string; url: string }
+
+export const reviewsSource = {
+  label: "Facebook",
+  url: "https://www.facebook.com/Bozikytky/reviews",
+  summary: "Doporučuje 100 % · 5 recenzí na Facebooku",
+}
+
+export const reviews: Review[] = [
+  {
+    name: "Lucka Křikava Niessnerová",
+    date: "3. října 2022",
+    text: "Kytky od Martiny jsou vždy ta nejlepší volba! Pokaždé, co chci někomu udělat radost, volám rovnou Martině a nechávám to na ní a výsledek je vždy TOP! Jsem jí věrná už od svých svatebních kytic, a to je už 7 let :)",
+    photo: "/images/recenze/lucka.jpg",
+    url: "https://www.facebook.com/lucka.kowalska/posts/pfbid02tJqqEoiBxgkeQKBHbsdWEqqQcPMa4jHWNVQswC9hYEaaykpbWnwTujc7Xdn1jfC8l",
+  },
+  {
+    name: "Jana Přibylová",
+    date: "11. července 2022",
+    text: "Skvělé a vždy krásné kytky.",
+    photo: "/images/recenze/jana.jpg",
+    url: "https://www.facebook.com/jana.pribylova.583/posts/pfbid0245XxeSHnrvVTXe4vYR5J3nvXE9TbFY5LxT7kjSUBTaXB51EtfWfT5FZpVtXBZ6tgl",
+  },
+  {
+    name: "Zuzana Jeřábková Vaňková",
+    date: "4. června 2022",
+    text: "Kytky od Marti jsou krásné. Vždy udělají radost na tvářích obdarovaných. Martina je spolehlivá a vždy pochopí, co vlastně chci. Má neskutečný cit pro barvy. Její kytice jsou umělecká díla, proto je to má první volba. Už teď se těším, jakou kytku vytvoří pro mého syna do školy. Jsem si jistá, že bude Boží.",
+    photo: "/images/recenze/zuzana.jpg",
+    url: "https://www.facebook.com/zuzana.j.vankova/posts/pfbid02CFWMTFUmprbtR4HiQaBkSTzY7KX1hoVYB4iTDSyjvuLFALnHfCfJZvgZyr8dx1Gzl",
+  },
+  {
+    name: "Pavlína Caltová",
+    date: "4. června 2022",
+    text: "Jednoznačně ano… doporučuji… Marta vázala kytičku mamce na zlatou svatbu a jedno oko nezůstalo suché. Můžete říct: je to jen kytka, ale květinou se dá říct hodně ❤💗",
+    photo: "/images/recenze/pavlina.jpg",
+    url: "https://www.facebook.com/pavlina.caltova/posts/pfbid0iNJkLt86z9NJUs2ny1feKQBdYNHz5ibkZefmdJNPBgJ3iaD5RiKmqnMHm272Y4dl",
+  },
+  {
+    name: "Lenka Boboková",
+    date: "21. května 2022",
+    text: "Marťa je naše ověřená skvělá květinářka, která se neustále zlepšuje. Takže kytičky od ní jsou vážně BOŽÍ. Rozdávejte radost květinami ⚘🌻🌺🌸🌷🍀🌵💐",
+    photo: "/images/recenze/lenka.jpg",
+    url: "https://www.facebook.com/lenka.bobokova.9/posts/pfbid0TThyDd8NdNLZTG55Zr5U2RHvpRbEj4mTzFuBYuKVztMUGoqe6KMdqEvZ2vWaKEuel",
+  },
+]
 
 // Odpovědi jsou doslova Martinina slova, včetně smajlíků — neupravovat do úředního tónu.
 export const faqs = [

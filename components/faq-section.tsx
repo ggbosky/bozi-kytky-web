@@ -17,7 +17,7 @@ export function FAQSection() {
         <div className="mb-16 text-center">
           <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.24em] text-rose">Časté otázky</p>
           <h2 className="mb-6 text-balance text-4xl font-extrabold leading-[1.1] tracking-[-0.03em] text-green md:text-5xl">
-            Než se zeptáte.
+            Než se zeptáte…
           </h2>
         </div>
 

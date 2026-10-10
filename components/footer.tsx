@@ -10,10 +10,10 @@ export function Footer() {
       {/* fotka vystupuje nad patičku a nahoře se rozpouští do podkladu;
           dole končí kousek pod horní hranou patičky, takže pod ní už nic nevykukuje */}
       <div
-        className="absolute bottom-[calc(100%-3rem)] left-0 right-0 z-0 h-[calc(40vw+3rem)] w-full overflow-hidden md:h-[calc(24vw+3rem)]"
+        className="absolute bottom-[calc(100%-3rem)] left-0 right-0 z-0 h-[calc(40vw+3rem)] w-full overflow-hidden md:h-[calc(30vw+3rem)]"
         style={{
-          maskImage: "linear-gradient(to bottom, transparent 0%, #000 22%)",
-          WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, #000 22%)",
+          maskImage: "linear-gradient(to bottom, transparent 0%, #000 15%)",
+          WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, #000 15%)",
         }}
       >
         <img
@@ -29,9 +29,9 @@ export function Footer() {
         <div className="absolute inset-0 bg-green-ink/15" />
       </div>
 
-      {/* nápis písmem z loga; spodní okraj lehce zajede pod patičku */}
+      {/* nápis písmem z loga; celý nad patičkou, nic se neořezává */}
       <div
-        className="pointer-events-none absolute left-0 right-0 -top-[22.5vw] z-10 flex justify-center md:-top-[19vw]"
+        className="pointer-events-none absolute left-0 right-0 -top-[26.5vw] z-10 flex justify-center md:-top-[22.5vw]"
         aria-hidden="true"
       >
         <img src="/images/napis-bozi-kytky.svg?v=2" alt="" width={1409} height={369} className="w-[94vw] max-w-none [filter:drop-shadow(0_2px_14px_rgba(26,42,32,.5))] md:w-[80vw]" />
@@ -47,11 +47,8 @@ export function Footer() {
                 width={900}
                 height={763}
                 loading="lazy"
-                className="mb-5 h-24 w-auto"
+                className="mb-6 h-24 w-auto"
               />
-              <p className="mb-6 max-w-xs text-sm text-muted-foreground">
-                {cz("Martina Drexlerová – Praha a okolí")}
-              </p>
               <div className="flex gap-3">
                 <a
                   href={contact.instagram}
